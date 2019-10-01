@@ -1,0 +1,35 @@
+﻿@using Sheet4Part2.Models
+@model Sheet4Part2.Models.SubReceipt
+@{
+    ViewBag.Title = "Result";
+    List<SubOrder> subsList = (List<SubOrder>)Session["OrderList"];
+}
+
+<h2 class="text-center">Daily Totals</h2>
+<h3 class="text-center">Today's Date: @Model.getDate()</h3>
+
+<br /><br />
+@{
+    int counter = 1;
+    for(var i = 0; i < subsList.Count; i++)
+    {
+    <b>Order @counter</b><br />
+    <p>@subsList[i].sTypes</p>
+    <p>@subsList[i].sSizes</p>
+    <p>@subsList[i].sDeals</p>
+    <p>@subsList[i].qty sub(s)</p>
+    <br />
+
+        counter++;
+    }
+   
+    @Html.ActionLink("Back to Index", "Index");
+}
+
+
+
+<br /><br /><br />
+<p class="text-center">Income collected for the day: $@SubReceipt.incomeAccumulator</p>
+<p class="text-center">Tax Collected for the day: $@Math.Round(SubReceipt.taxAccumulator,2)</p>
+
+

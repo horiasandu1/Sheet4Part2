@@ -12,11 +12,14 @@
 <p class="text-center">Type of Meal Deal: @Html.DisplayFor(model => model.SandwichDeal)</p>
 <p class="text-center">Total Price of Sub: $@Html.DisplayFor(model => model.subPrice)</p>
 <p class="text-center">Total Price of Meal Deal: $@Html.DisplayFor(model => model.mealDealPrice)</p>
+<p class="text-center">Quantity: @Model.quantity subs</p>
 <br />
 <br />
-<p class="text-center">Cost: $@Html.DisplayFor(model => model.sandwichAndMealPrice)</p>
+<p class="text-center">Cost: $@Model.getSubTotal()</p>
 <p class="text-center">Tax: $@Model.getTaxes()</p>
 <p class="text-center">Total Due: $@Model.getTotalPrice()</p>
+
+
 <br />
 <p class="text-center">
     @Html.ActionLink("Place another order", "Index")

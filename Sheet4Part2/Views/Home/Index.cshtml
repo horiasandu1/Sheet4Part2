@@ -1,4 +1,5 @@
 ﻿@model Sheet4Part2.Models.SubOrder
+@using Sheet4Part2.Models
 @{
     ViewBag.Title = "Index";
 
@@ -27,11 +28,18 @@
     <label>None: </label> @Html.RadioButtonFor(model => model.sDeals, Sheet4Part2.Models.SandwichDeal.none, new { Checked = "checked" })
     <label>Drink and Chips: </label> @Html.RadioButtonFor(model => model.sDeals, Sheet4Part2.Models.SandwichDeal.drinkAndChips)
     <label>Drink and Cookie: </label> @Html.RadioButtonFor(model => model.sDeals, Sheet4Part2.Models.SandwichDeal.drinkAndCookie)
-
+    <br />
+    <label>Quantity: </label> @Html.TextBoxFor(model => model.qty, new { Type="Number", Min=1, Value=1 })
     <br /><br />
     <input type="submit" value="Submit" />  
 
 }
+    @{ 
+        if (SubReceipt.incomeAccumulator != 0)
+        {
+            @Html.ActionLink("See Daily Totals","Totals")
+        }
+    }
 <br />
 
 

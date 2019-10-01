@@ -10,6 +10,7 @@ namespace Sheet4Part2.Models
         public SandwichType sTypes { get; set; }
         public SandwichSize sSizes { get; set; }
         public SandwichDeal sDeals { get; set; }
+        public int qty { get; set; }
 
 
     }
