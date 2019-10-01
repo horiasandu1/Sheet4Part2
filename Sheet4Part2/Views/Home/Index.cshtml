@@ -1,0 +1,34 @@
+﻿@model Sheet4Part2.Models.SubOrder
+@{
+    ViewBag.Title = "Index";
+
+}
+
+
+
+@using (Html.BeginForm("Receipt", "Home", FormMethod.Post))
+{
+    <h2 class="text-center">Welcome to Star Subs!</h2>
+    <label>Sandwich Type:</label>
+    <br />
+
+    @Html.ListBoxFor(model => model.sTypes, new SelectList(Enum.GetValues(typeof(Sheet4Part2.Models.SandwichType))))
+    <br />
+    <br />
+
+    <label>Sandwich Size:</label>
+    <br />
+    @Html.ListBoxFor(model => model.sSizes, new SelectList(Enum.GetValues(typeof(Sheet4Part2.Models.SandwichSize))))
+
+    <br />
+    <br />
+    <label>Meal Deal:</label>
+    <br />
+    <label>None: </label> @Html.RadioButtonFor(model => model.sDeals, Sheet4Part2.Models.SandwichDeal.none)
+    <label>Drink and Chips: </label> @Html.RadioButtonFor(model => model.sDeals, Sheet4Part2.Models.SandwichDeal.drinkAndChips)
+    <label>Drink and Cookie: </label> @Html.RadioButtonFor(model => model.sDeals, Sheet4Part2.Models.SandwichDeal.drinkAndCookie)
+
+    <br /><br />
+    <input type="submit" value="Submit" />  
+}
+
