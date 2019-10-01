@@ -9,6 +9,8 @@ namespace Sheet4Part2.Controllers
 {
     public class HomeController : Controller
     {
+        public static double taxAccumulator;
+        public static double incomeAccumulator;
         // GET: Home
         [HttpGet]
         public ActionResult Index()

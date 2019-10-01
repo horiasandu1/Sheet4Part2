@@ -17,6 +17,9 @@
 <p class="text-center">Cost: $@Html.DisplayFor(model => model.sandwichAndMealPrice)</p>
 <p class="text-center">Tax: $@Model.getTaxes()</p>
 <p class="text-center">Total Due: $@Model.getTotalPrice()</p>
-
+<br />
+<p class="text-center">
+    @Html.ActionLink("Place another order", "Index")
+    </p>
 
 
