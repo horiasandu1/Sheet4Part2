@@ -5,9 +5,18 @@
 }
 
 <h2 class="text-center">StarSubs Receipt</h2>
-<h3 class="text-center">Today's Date: </h3> 
+<h3 class="text-center">Today's Date: @Model.getDate()</h3>
 
-<p class="text-center">Type of Sub: </p> <p>@Html.DisplayFor(model => model.SandwichType)</p>
+<p class="text-center">Type of Sub: @Html.DisplayFor(model => model.SandwichType)</p>
+<p class="text-center">Size of Sub: @Html.DisplayFor(model => model.SandwichSize)</p>
+<p class="text-center">Type of Meal Deal: @Html.DisplayFor(model => model.SandwichDeal)</p>
+<p class="text-center">Total Price of Sub: $@Html.DisplayFor(model => model.subPrice)</p>
+<p class="text-center">Total Price of Meal Deal: $@Html.DisplayFor(model => model.mealDealPrice)</p>
+<br />
+<br />
+<p class="text-center">Cost: $@Html.DisplayFor(model => model.sandwichAndMealPrice)</p>
+<p class="text-center">Tax: $@Model.getTaxes()</p>
+<p class="text-center">Total Due: $@Model.getTotalPrice()</p>
 
 
 

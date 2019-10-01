@@ -52,8 +52,9 @@ namespace Sheet4Part2.Controllers
             double subSize = sizePrices[(int)order.sSizes];
             double subDeal = mealDealPrices[(int)order.sDeals];
 
+            receipt.subPrice = Math.Round(subPrice * subSize, 2);
             receipt.mealDealPrice = subDeal;
-            receipt.totalSandwichPrice = Math.Round(subPrice * subSize, 2);
+            receipt.sandwichAndMealPrice = Math.Round(subPrice * subSize, 2)+subDeal;
 
             return View(receipt);
         }

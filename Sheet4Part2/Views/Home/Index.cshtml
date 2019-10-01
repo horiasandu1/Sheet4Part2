@@ -24,7 +24,7 @@
     <br />
     <label>Meal Deal:</label>
     <br />
-    <label>None: </label> @Html.RadioButtonFor(model => model.sDeals, Sheet4Part2.Models.SandwichDeal.none)
+    <label>None: </label> @Html.RadioButtonFor(model => model.sDeals, Sheet4Part2.Models.SandwichDeal.none, new { Checked = "checked" })
     <label>Drink and Chips: </label> @Html.RadioButtonFor(model => model.sDeals, Sheet4Part2.Models.SandwichDeal.drinkAndChips)
     <label>Drink and Cookie: </label> @Html.RadioButtonFor(model => model.sDeals, Sheet4Part2.Models.SandwichDeal.drinkAndCookie)
 
